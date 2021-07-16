@@ -12,14 +12,11 @@ on:
 
 jobs:
   build:
-
-    strategy:
-      matrix:
-        os: [macos-latest]
-        swift: ["5.5"]
-    runs-on: ${{ matrix.os }}
-
+    runs-on: macos-latest
     steps:
+    - uses: fwal/setup-swift@d43a564349d1341cd990cfbd70d94d63b8899475
+      with:
+       swift-version: "5.5"
     - uses: actions/checkout@v2
     - name: Build
       run: swift build -v
