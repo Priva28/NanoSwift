@@ -22,6 +22,8 @@ public class NanoNode {
     
     // Async/await methods
     
+    #if compiler(>=5.5)
+    
     @available(watchOS 8.0, *)
     @available(tvOS 15.0, *)
     @available(macOS 12.0, *)
@@ -123,6 +125,8 @@ public class NanoNode {
         }
         return data
     }
+    
+    #endif
     
     // Regular ugly completion handler methods
     
